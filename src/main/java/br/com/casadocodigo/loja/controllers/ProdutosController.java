@@ -3,6 +3,8 @@ package br.com.casadocodigo.loja.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import br.com.casadocodigo.loja.models.Produto;
+
 @Controller
 public class ProdutosController {
 
@@ -12,11 +14,8 @@ public class ProdutosController {
 	}
 	
 	@RequestMapping("produtos")
-	public String grava(String titulo, String descricao, int paginas) {
-		System.out.println(titulo);
-		System.out.println(descricao);
-		System.out.println(paginas);
-		
+	public String grava(Produto produto) {
+		System.out.println(produto);
 		return "produtos/ok";
 	}
 }
