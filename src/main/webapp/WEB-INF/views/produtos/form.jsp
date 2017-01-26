@@ -26,6 +26,11 @@
 	        <input type="text" name="paginas" />
 	        <form:errors path="paginas" />
 	    </div>
+	    <div>
+		    <label>Data de Lançamento</label>
+		    <input type="text" name="dataLancamento" />
+		    <form:errors path="dataLancamento" />
+		</div>
 		 <c:forEach items="${tipos}" var="tipoPreco" varStatus="status">
             <div>
                 <label>${tipoPreco}</label>
