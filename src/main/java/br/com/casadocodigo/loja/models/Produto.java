@@ -75,7 +75,6 @@ public class Produto {
 		this.precos = precos;
 	}
 
-	@DateTimeFormat(pattern="dd/MM/yyyy")
 	public Calendar getDataLancamento() {
 		return dataLancamento;
 	}
