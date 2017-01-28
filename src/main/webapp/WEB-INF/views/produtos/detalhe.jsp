@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,7 +51,10 @@
                 <nav id="main-nav">
 
                     <ul class="clearfix">
-                        <li><a href="/cart" rel="nofollow">Seu carrinho</a></li>
+                        <li>
+                        	<a href="/cart" rel="nofollow">Seu carrinho (${carrinhoCompras.quantidade})</a>
+                       	</li>
+                        
                         <li><a href="/pages/sobre-a-casa-do-codigo" rel="nofollow">Sobre Nós</a></li>
                     </ul>
                 </nav>
@@ -94,7 +99,7 @@
 	
 	  
 	  <section class="buy-options clearfix">  
-	   <form action="/carrinho/add" method="post" class="container">
+	   <form action="<c:url value="/carrinho/add" />" method="post" class="container">
 	    <ul id="variants" class="clearfix">
 	        <input type="hidden" name="produtoId" value="${produto.id}" />
 	        <c:forEach items="${produto.precos}" var="preco">
@@ -123,7 +128,9 @@
 	    	<h2 class="section-title">Dados do livro:</h2>
 		    <p>Número de páginas: <span>${produto.paginas}</span></p>
 		    <p></p>
-		    <p>Data de publicação: ${produto.dataLancamento}</p>
+		    <p>Data de publicação: 
+		    	<span><fmt:formatDate pattern="dd/MM/yyyy" value="${produto.dataLancamento.time}"/></span>
+		    </p>
 		    <p>Encontrou um erro? <a href='/submissao-errata' target='_blank'>Submeta uma errata</a></p>
 		</section>
 	</div>
