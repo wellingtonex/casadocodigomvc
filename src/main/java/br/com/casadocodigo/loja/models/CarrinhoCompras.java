@@ -19,14 +19,14 @@ public class CarrinhoCompras implements Serializable {
 	private Map<CarrinhoItem, Integer> itens = new LinkedHashMap<CarrinhoItem, Integer>();
 
 	public void add(CarrinhoItem item) {
-		itens.put(item, getQuantidade(item));
+		itens.put(item, getQuantidade(item) + 1);
 	}
 
 	public Integer getQuantidade(CarrinhoItem item) {
 		if(!itens.containsKey(item)) {
 			itens.put(item, 0);
 		}
-		return itens.get(item) + 1;
+		return itens.get(item);
 	}
 	
 	public Integer getQuantidade() {
@@ -47,5 +47,12 @@ public class CarrinhoCompras implements Serializable {
 			total = total.add(getTotal(item));
 		}
 		return total;
+	}
+
+	
+	public void remover(Long produtoId, TipoPreco tipoPreco) {
+		Produto produto = new Produto();
+		produto.setId(produtoId);
+	    itens.remove(new CarrinhoItem(produto, tipoPreco));
 	}
 }
