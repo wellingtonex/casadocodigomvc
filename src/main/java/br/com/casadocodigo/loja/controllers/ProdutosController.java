@@ -86,9 +86,9 @@ public class ProdutosController {
 	    return modelAndView;
 	}
 	
-	@RequestMapping(value="/{id}", method=RequestMethod.GET)
-	@ResponseBody
-	public Produto detalheJSON(@PathVariable("id") Long id){
-	    return produtoDAO.find(id);
-	}
+//	@RequestMapping(value="/{id}", method=RequestMethod.GET)
+//	@ResponseBody
+//	public Produto detalheJSON(@PathVariable("id") Long id){
+//	    return produtoDAO.find(id);
+//	}
 }
