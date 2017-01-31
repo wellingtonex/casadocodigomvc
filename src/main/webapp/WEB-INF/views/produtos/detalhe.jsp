@@ -83,7 +83,7 @@
 	<article id="${produto.id}">
 		  <header id="product-highlight" class="clearfix">
 		    <div id="product-overview" class="container">
-		      <img width="280px" height="395px" src="http://cdn.shopify.com/s/files/1/0155/7645/products/css-eficiente-featured_large.png?v=1435245145" class="product-featured-image" />
+		      <img width="280px" height="395px" class="product-featured-image" src="${contextPath}${produto.sumarioPath}" />
 		      <h1 class="product-title">${produto.titulo}</h1>
 		      <p class="product-author">
 		        <span class="product-author-link">
@@ -99,7 +99,7 @@
 	
 	  
 	  <section class="buy-options clearfix">  
-	   <form action="<c:url value="/carrinho/add" />" method="post" class="container">
+	   <form:form servletRelativeAction="/carrinho/add" method="post" cssClass="container">
 	    <ul id="variants" class="clearfix">
 	        <input type="hidden" name="produtoId" value="${produto.id}" />
 	        <c:forEach items="${produto.precos}" var="preco">
@@ -114,7 +114,7 @@
 			</c:forEach>           
 	    </ul>
 	    <button type="submit" class="submit-image icon-basket-alt" alt="Compre Agora" title="Compre Agora ${produto.titulo}"></button>
-	  </form>
+	  </form:form>
 	</section>
 	  
 	<div class="container">
