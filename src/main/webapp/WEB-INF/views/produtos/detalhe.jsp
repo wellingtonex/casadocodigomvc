@@ -1,12 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-	
-	<%@ include file="/WEB-INF/views/cabecalho.jsp" %>
-	
-
+<%@ taglib tagdir="/WEB-INF/tags" prefix="tags" %>	
+<c:url value="/" var="contextPath"/>
+<tags:pageTemplate titulo="${produto.titulo}">	
 	<article id="${produto.id}">
 		  <header id="product-highlight" class="clearfix">
 		    <div id="product-overview" class="container">
@@ -47,15 +44,15 @@
 	<div class="container">
 		<section class="summary">
 			<ul>
-			  	<li><h3>E muito mais... <a href='/pages/sumario-java8'>veja o sumÃ¡rio</a>.</h3></li>
+			  	<li><h3>E muito mais... <a href='/pages/sumario-java8'>veja o sumário</a>.</h3></li>
 			</ul>
 		</section>
 	  
 		<section class="data product-detail">
 	    	<h2 class="section-title">Dados do livro:</h2>
-		    <p>NÃºmero de pÃ¡ginas: <span>${produto.paginas}</span></p>
+		    <p>Número de páginas: <span>${produto.paginas}</span></p>
 		    <p></p>
-		    <p>Data de publicaÃ§Ã£o: 
+		    <p>Data de publicação: 
 		    	<span><fmt:formatDate pattern="dd/MM/yyyy" value="${produto.dataLancamento.time}"/></span>
 		    </p>
 		    <p>Encontrou um erro? <a href='/submissao-errata' target='_blank'>Submeta uma errata</a></p>
@@ -64,4 +61,4 @@
 	
 	</article>	
 
-	<%@ include file="/WEB-INF/views/rodape.jsp" %>
+</tags:pageTemplate>
