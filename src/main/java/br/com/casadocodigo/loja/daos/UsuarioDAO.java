@@ -19,13 +19,23 @@ public class UsuarioDAO implements UserDetailsService {
 
 	@Override
 	public Usuario loadUserByUsername(String email) {
-		List<Usuario> usuarios = entityManager.createQuery("select u from Usuario u where u.email = :email", Usuario.class)
-                .setParameter("email", email).getResultList();
+		List<Usuario> usuarios = entityManager
+				.createQuery("select u from Usuario u where u.email = :email",
+						Usuario.class)
+				.setParameter("email", email).getResultList();
 
-        if (usuarios.isEmpty()) {
-            throw new UsernameNotFoundException("O usuário " + email + " não foi encontrado");
-        }
+		if (usuarios.isEmpty()) {
+			throw new UsernameNotFoundException(
+					"O usuário " + email + " não foi encontrado");
+		}
 
-        return usuarios.get(0);
+		return usuarios.get(0);
+	}
+
+	public void gravar(Usuario usuario) {
+		// para criptografar a senha do usuario.
+		// BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+		// String encodedPassword = passwordEncoder.encode(password);
+		entityManager.persist(usuario);
 	}
 }
