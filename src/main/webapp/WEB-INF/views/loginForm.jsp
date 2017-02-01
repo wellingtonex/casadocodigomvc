@@ -19,6 +19,14 @@
     </style>
 </head>
 <body>
+
+	<c:if test="${not empty sessionScope.SPRING_SECURITY_LAST_EXCEPTION}">
+        <div class="error" style="color: red;">            
+            ${sessionScope.SPRING_SECURITY_LAST_EXCEPTION.message}
+        </div>
+    </c:if>
+
+
     <div class="container">
         <h1>Login Casa do Código</h1>
         <form:form servletRelativeAction="/login" method="post">
