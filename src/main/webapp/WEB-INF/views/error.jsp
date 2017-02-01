@@ -1,12 +1,19 @@
 
 <%@ taglib tagdir="/WEB-INF/tags" prefix="tags" %>
 
-<tags:pageTemplate titulo="Produto não encontrado">
-	<section id="index-section" class="container middle">
+<tags:pageTemplate titulo="Erro">
 
-		<h2>O produto informado não foi encontrado</h2>
-		
-	</section>
+    <section id="index-section" class="container middle">
+        <h2>Erro genérico acontecedo!!!</h2>
+    </section>
+	<p>${exception.message}</p>
+    <!-- 
+        Mensagem: ${exception.message}
+        <c:forEach items="${exception.stackTrace}" var="stk">
+            ${stk}
+        </c:forEach>    
+    -->
+
 </tags:pageTemplate>	
 	
 

@@ -92,9 +92,4 @@ public class ProdutosController {
 //	public Produto detalheJSON(@PathVariable("id") Long id){
 //	    return produtoDAO.find(id);
 //	}
-	
-	@ExceptionHandler(NoResultException.class)
-	public String trataDetalheNaoEcontrado(){
-	    return "error";
-	}
 }
