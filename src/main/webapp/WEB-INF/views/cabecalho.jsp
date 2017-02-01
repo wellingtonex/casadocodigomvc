@@ -21,7 +21,19 @@
 	                    	<a href="/pages/sobre-a-casa-do-codigo" rel="nofollow">
 	                    		<fmt:message key="menu.sobre"/>
                     		</a>
-                    	</li>	                    
+                    	</li>
+                    	
+                    	<li>
+						    <a href="?locale=pt_BR" rel="nofollow">
+						        <fmt:message key="menu.pt"/>
+						    </a>
+						</li>
+						
+						<li>
+						    <a href="?locale=en_UR" rel="nofollow">
+						        <fmt:message key="menu.en"/>
+						    </a>
+						</li>                    
 	                </ul>
 	            </nav>
 	        </div>
